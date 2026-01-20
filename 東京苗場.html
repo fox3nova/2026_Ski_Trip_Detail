@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 苗場·東京滑雪手冊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        
+        body { 
+            font-family: 'Noto Sans TC', sans-serif; 
+            background-color: #F8FAFC; 
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .glass-header {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+        }
+
+        .tab-content { display: none; transition: all 0.3s ease; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-out; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #E2E8F0;
+            z-index: 0;
+        }
+
+        .sticky-nav {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+            border-top: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .nav-btn.active {
+            color: #3B82F6;
+        }
+
+        .nav-btn.active i {
+            transform: translateY(-4px);
+            transition: transform 0.2s;
+        }
+    </style>
+</head>
+<body class="pb-32">
+
+    <!-- Header Section -->
+    <header class="glass-header text-white pt-8 pb-12 px-6 rounded-b-[40px] shadow-2xl relative overflow-hidden">
+        <div class="absolute top-[-20px] right-[-20px] w-40 h-40 bg-blue-500 rounded-full opacity-10 blur-3xl"></div>
+        <div class="relative z-10">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-3xl font-bold tracking-tight">2026 滑雪之旅</h1>
+                    <p class="text-blue-300 text-sm mt-1 font-light italic">Naeba & Tokyo Adventure</p>
+                </div>
+                <div class="bg-white/10 p-2 rounded-2xl">
+                    <i class="fa-solid fa-snowflake text-2xl text-blue-300 animate-pulse"></i>
+                </div>
+            </div>
+            
+            <div class="mt-8 grid grid-cols-2 gap-4">
+                <div class="bg-white/5 border border-white/10 p-3 rounded-2xl">
+                    <p class="text-[10px] uppercase text-blue-300 font-bold mb-1">Trip Duration</p>
+                    <p class="text-sm">02.05 - 02.12</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-3 rounded-2xl">
+                    <p class="text-[10px] uppercase text-blue-300 font-bold mb-1">Travelers</p>
+                    <p class="text-sm">13人 / 4個家庭</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="px-5 -mt-6 relative z-20">
+        
+        <!-- Control Center / Booking Alert -->
+        <section class="bg-white rounded-3xl p-5 shadow-xl shadow-slate-200/50 mb-6">
+            <h2 class="text-slate-800 font-bold text-lg mb-4 flex items-center">
+                <i class="fa-solid fa-bullhorn text-orange-500 mr-2"></i> 行程控制塔
+            </h2>
+            <div class="space-y-3">
+                <div class="flex items-center justify-between p-3 bg-orange-50 rounded-2xl border border-orange-100">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+                            <i class="fa-solid fa-ticket text-white text-xs"></i>
+                        </div>
+                        <span class="text-sm font-medium text-orange-800">SHIBUYA SKY 搶票</span>
+                    </div>
+                    <span class="text-xs font-bold text-orange-600 bg-white px-2 py-1 rounded-lg">01/27 23:00</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-emerald-50 rounded-2xl border border-emerald-100">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center mr-3">
+                            <i class="fa-solid fa-check text-white text-xs"></i>
+                        </div>
+                        <span class="text-sm font-medium text-emerald-800">teamLab 門票已完成</span>
+                    </div>
+                    <span class="text-xs font-bold text-emerald-600">10:00 (2/10)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Area -->
+        <div id="itinerary-view" class="tab-content active">
+            <!-- Day 1 -->
+            <div class="mb-10 relative">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 bg-blue-600 rounded-2xl flex items-center justify-center text-white font-bold mr-4 shadow-lg shadow-blue-200">05</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">2月5日 (四) 出發與啟程</h3>
+                        <p class="text-xs text-slate-400">TPE ➔ NRT ➔ Naeba</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-line relative pl-8 space-y-6">
+                    <div class="relative">
+                        <div class="absolute -left-[25px] w-4 h-4 bg-white border-4 border-blue-600 rounded-full z-10"></div>
+                        <p class="text-xs font-bold text-blue-600">08:30 - 12:30</p>
+                        <h4 class="font-bold text-slate-700">JX800 飛行與抵達</h4>
+                        <p class="text-sm text-slate-500 mt-1">成田機場集合與貞儀家入境。</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] w-4 h-4 bg-white border-4 border-slate-300 rounded-full z-10"></div>
+                        <p class="text-xs font-bold text-slate-400">下午時段</p>
+                        <h4 class="font-bold text-slate-700">包車前往苗場</h4>
+                        <p class="text-sm text-slate-500 mt-1">一台海獅+一台阿法。沿途風景觀光並前往旅館 Check-in。</p>
+                        <a href="https://maps.google.com/?q=新潟県南魚沼郡湯沢町三国171-7" class="inline-flex items-center mt-3 text-xs font-bold text-blue-600 bg-blue-50 px-3 py-2 rounded-xl">
+                            <i class="fa-solid fa-location-dot mr-2"></i> 苗場 Wonderwall 導航
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 5 (The Big Transfer) -->
+            <div class="mb-10 relative">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 bg-slate-800 rounded-2xl flex items-center justify-center text-white font-bold mr-4 shadow-lg">09</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">2月9日 (一) 移防東京</h3>
+                        <p class="text-xs text-slate-400">Naeba ➔ Ueno, Tokyo</p>
+                    </div>
+                </div>
+                <div class="timeline-line relative pl-8 space-y-6">
+                    <div class="relative">
+                        <div class="absolute -left-[25px] w-4 h-4 bg-white border-4 border-slate-800 rounded-full z-10"></div>
+                        <p class="text-xs font-bold text-slate-400">14:00 - 17:30</p>
+                        <h4 class="font-bold text-slate-700">苗場發車回東京</h4>
+                        <p class="text-sm text-slate-500 mt-1">抵達上野 APA 飯店，建議步行至阿美橫丁散策。</p>
+                        <div class="grid grid-cols-2 gap-2 mt-4">
+                            <a href="https://maps.google.com/?cid=10402388261957968254" class="bg-white border p-3 rounded-2xl text-center shadow-sm">
+                                <i class="fa-solid fa-utensils text-blue-500 mb-1"></i><br><span class="text-[10px] font-bold">今半壽喜燒</span>
+                            </a>
+                            <a href="https://maps.google.com/?cid=4107877080452240075" class="bg-white border p-3 rounded-2xl text-center shadow-sm">
+                                <i class="fa-solid fa-basket-shopping text-purple-500 mb-1"></i><br><span class="text-[10px] font-bold">二木的菓子</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 6 (Peak Day) -->
+            <div class="mb-10 relative">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-2xl flex items-center justify-center text-white font-bold mr-4 shadow-lg shadow-indigo-200">10</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">2月10日 (二) 視覺雙饗宴</h3>
+                        <p class="text-xs text-slate-400">Art, Views & Yakiniku</p>
+                    </div>
+                </div>
+                <div class="timeline-line relative pl-8 space-y-8">
+                    <div class="relative">
+                        <div class="absolute -left-[25px] w-4 h-4 bg-white border-4 border-indigo-600 rounded-full z-10"></div>
+                        <p class="text-xs font-bold text-indigo-600">10:00 - 12:30</p>
+                        <h4 class="font-bold text-slate-700 flex items-center">teamLab Borderless <span class="ml-2 bg-emerald-100 text-emerald-600 text-[10px] px-1.5 py-0.5 rounded">已預約</span></h4>
+                        <p class="text-sm text-slate-500 mt-1">麻布台 Hills。沉浸式數位藝術。</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] w-4 h-4 bg-white border-4 border-indigo-600 rounded-full z-10"></div>
+                        <p class="text-xs font-bold text-indigo-600">12:45</p>
+                        <h4 class="font-bold text-slate-700">午餐：AFURI 拉麵</h4>
+                        <p class="text-sm text-slate-500 mt-1">柚子鹽味與潮流感的完美結合。</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] w-4 h-4 bg-white border-4 border-orange-500 rounded-full z-10"></div>
+                        <p class="text-xs font-bold text-orange-500">17:00</p>
+                        <h4 class="font-bold text-slate-700">SHIBUYA SKY 日落</h4>
+                        <p class="text-sm text-slate-500 mt-1">俯瞰百萬夜景 (需於 1/27 搶票)。</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] w-4 h-4 bg-white border-4 border-indigo-600 rounded-full z-10"></div>
+                        <p class="text-xs font-bold text-indigo-600">19:30</p>
+                        <h4 class="font-bold text-slate-700 flex items-center">土古里和牛燒肉 <span class="ml-2 bg-emerald-100 text-emerald-600 text-[10px] px-1.5 py-0.5 rounded">已預約</span></h4>
+                        <p class="text-sm text-slate-500 mt-1">山形牛吃到飽，上野站步行可達。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 7 -->
+            <div class="mb-10 relative">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 bg-pink-500 rounded-2xl flex items-center justify-center text-white font-bold mr-4 shadow-lg">11</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">2月11日 (三) 潮流與療癒</h3>
+                        <p class="text-xs text-slate-400">Shopping & Owls</p>
+                    </div>
+                </div>
+                <div class="timeline-line relative pl-8 space-y-6">
+                    <div class="relative">
+                        <div class="absolute -left-[25px] w-4 h-4 bg-white border-4 border-pink-500 rounded-full z-10"></div>
+                        <p class="text-xs font-bold text-pink-600">10:30</p>
+                        <h4 class="font-bold text-slate-700">lululemon GINZA SIX</h4>
+                        <p class="text-sm text-slate-500 mt-1">東京旗艦店購物時光。</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] w-4 h-4 bg-white border-4 border-pink-500 rounded-full z-10"></div>
+                        <p class="text-xs font-bold text-pink-600">12:00</p>
+                        <h4 class="font-bold text-slate-700 text-pink-700">五代目 花山烏龍麵</h4>
+                        <p class="text-sm text-slate-500 mt-1">推薦：鬼釜 (狸貓陶鍋)。</p>
+                        <div class="bg-slate-100 p-3 rounded-2xl mt-3 text-[11px] text-slate-500">
+                            <span class="font-bold text-slate-700 block mb-1">🆘 應變備案</span>
+                            若銀座排隊太長，直接回秋葉原吃 <strong>炸牛排 もと村</strong>。
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] w-4 h-4 bg-white border-4 border-pink-500 rounded-full z-10"></div>
+                        <p class="text-xs font-bold text-pink-600">14:00</p>
+                        <h4 class="font-bold text-slate-700">秋葉原貓頭鷹咖啡館</h4>
+                        <p class="text-sm text-slate-500 mt-1">已預定 9 名，請提早抵達並確保已用完餐。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- iOS User Guide Card -->
+            <div class="mt-8 bg-blue-900 text-white rounded-3xl p-6 shadow-xl">
+                <h3 class="font-bold text-lg mb-3 flex items-center">
+                    <i class="fa-brands fa-apple mr-2"></i> iOS 用戶小技巧
+                </h3>
+                <p class="text-xs text-blue-200 leading-relaxed mb-4">
+                    想讓這份行程像 App 一樣出現在手機桌面嗎？
+                </p>
+                <div class="space-y-3">
+                    <div class="flex items-center text-xs">
+                        <div class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">1</div>
+                        <span>點擊 Safari 下方的「分享」按鈕</span>
+                    </div>
+                    <div class="flex items-center text-xs">
+                        <div class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">2</div>
+                        <span>選擇「加入主畫面」並點擊新增</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="groups-view" class="tab-content">
+            <div class="space-y-6">
+                <div class="bg-white rounded-3xl p-6 shadow-lg shadow-slate-200">
+                    <h3 class="font-bold text-slate-800 text-lg mb-4 border-b pb-3">🎿 滑雪小隊</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-yellow-100 text-yellow-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0"><i class="fa-solid fa-child"></i></div>
+                            <div>
+                                <p class="text-xs font-bold text-yellow-600 uppercase">Junior 組</p>
+                                <p class="text-sm text-slate-600 font-medium">恩丞、語恩、暐苹、詠捷</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0"><i class="fa-solid fa-venus"></i></div>
+                            <div>
+                                <p class="text-xs font-bold text-pink-600 uppercase">Lady 組</p>
+                                <p class="text-sm text-slate-600 font-medium">Sa媽、小咪、小貞、詠涵、菲菲</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0"><i class="fa-solid fa-mars"></i></div>
+                            <div>
+                                <p class="text-xs font-bold text-blue-600 uppercase">Men 組</p>
+                                <p class="text-sm text-slate-600 font-medium">黎老闆、小梅、Nova、祐嘉</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 rounded-3xl p-6 text-white shadow-xl">
+                    <h3 class="font-bold text-lg mb-4 border-b border-white/10 pb-3">🏠 家族通訊錄</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-1">
+                            <p class="text-blue-300 text-[10px] font-bold uppercase">小貞家 (4)</p>
+                            <p class="text-xs">Nova, 小貞, 祐嘉, 語恩</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-blue-300 text-[10px] font-bold uppercase">小咪家 (4)</p>
+                            <p class="text-xs">黎老闆, 小咪, 恩丞, 菲菲</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-blue-300 text-[10px] font-bold uppercase">Sa家 (3)</p>
+                            <p class="text-xs">Sa媽, 詠涵, 詠捷</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-blue-300 text-[10px] font-bold uppercase">小梅家 (2)</p>
+                            <p class="text-xs">小梅, 暐苹</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="transport-view" class="tab-content">
+            <div class="space-y-4">
+                <div class="bg-white rounded-3xl p-5 shadow-lg border border-slate-100">
+                    <h3 class="font-bold text-slate-800 mb-4 flex items-center"><i class="fa-solid fa-hotel text-blue-500 mr-2"></i> 住宿飯店</h3>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl">
+                            <p class="font-bold text-slate-700">Naeba Wonderwall</p>
+                            <p class="text-xs text-slate-400 mt-1">新潟県南魚沼郡湯沢町三国171-7</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl">
+                            <p class="font-bold text-slate-700">Ueno APA Hotel</p>
+                            <p class="text-xs text-slate-400 mt-1">東京都台東区上野2-11-18</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl p-5 shadow-lg border border-slate-100">
+                    <h3 class="font-bold text-slate-800 mb-4 flex items-center"><i class="fa-solid fa-van-shuttle text-blue-500 mr-2"></i> 車輛安排</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center text-sm p-3 border-b border-slate-50">
+                            <span class="text-slate-500">02.05 接機</span>
+                            <span class="font-bold">1 海獅 + 1 阿法</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm p-3 border-b border-slate-50">
+                            <span class="text-slate-500">02.09 飯店移防</span>
+                            <span class="font-bold">1 海獅 + 1 阿法</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm p-3 border-b border-slate-50">
+                            <span class="text-slate-500">02.11 送機(小咪)</span>
+                            <span class="font-bold">1 阿法</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm p-3">
+                            <span class="text-slate-500">02.12 送機(全員)</span>
+                            <span class="font-bold">2 阿法</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Navigation Bottom Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 sticky-nav h-20 px-8 flex justify-between items-center z-50">
+        <button onclick="changeView('itinerary')" class="nav-btn active flex flex-col items-center gap-1" id="nav-itinerary">
+            <i class="fa-solid fa-calendar-day text-xl"></i>
+            <span class="text-[10px] font-bold uppercase tracking-wider">行程</span>
+        </button>
+        <button onclick="changeView('groups')" class="nav-btn flex flex-col items-center gap-1 text-slate-400" id="nav-groups">
+            <i class="fa-solid fa-users text-xl"></i>
+            <span class="text-[10px] font-bold uppercase tracking-wider">分組</span>
+        </button>
+        <button onclick="changeView('transport')" class="nav-btn flex flex-col items-center gap-1 text-slate-400" id="nav-transport">
+            <i class="fa-solid fa-map-location-dot text-xl"></i>
+            <span class="text-[10px] font-bold uppercase tracking-wider">交通</span>
+        </button>
+    </nav>
+
+    <script>
+        function changeView(viewId) {
+            // Update Views
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(viewId + '-view').classList.add('active');
+
+            // Update Nav Buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active', 'text-blue-600');
+                btn.classList.add('text-slate-400');
+            });
+            const activeBtn = document.getElementById('nav-' + viewId);
+            activeBtn.classList.add('active', 'text-blue-600');
+            activeBtn.classList.remove('text-slate-400');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
