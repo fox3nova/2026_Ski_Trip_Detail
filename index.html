@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>2026 小貞家·東京雪之旅手冊 V42</title>
+    <title>2026 小貞家·東京雪之旅手冊 V44</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -61,7 +61,7 @@
             color: #4338CA;
             padding: 10px 20px;
             border-radius: 14px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 700;
             margin-top: 8px;
             text-decoration: none;
@@ -70,8 +70,8 @@
         .map-link:active { transform: scale(0.95); opacity: 0.8; }
 
         .check-item input {
-            width: 22px;
-            height: 22px;
+            width: 24px;
+            height: 24px;
         }
         .check-item input:checked + span {
             text-decoration: line-through;
@@ -135,12 +135,13 @@
             background: #F1F5F9;
             border: 1px solid #E2E8F0;
             border-radius: 1.25rem;
-            padding: 16px;
-            margin-top: 12px;
+            padding: 18px;
+            margin-top: 15px;
         }
 
         .badge-4p { background: #F0F9FF; color: #0369A1; border: 1px solid #BAE6FD; padding: 4px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: bold; }
         .badge-holiday { background: #FEE2E2; color: #B91C1C; padding: 4px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: bold; border: 1px solid #FECACA; }
+        .badge-option { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; padding: 4px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: bold; }
     </style>
 </head>
 <body class="pb-32 font-medium text-slate-700">
@@ -148,10 +149,10 @@
     <!-- QR Modal Container -->
     <div id="qr-modal" onclick="closeQR()">
         <div id="modal-qr-container" onclick="event.stopPropagation()">
-            <p id="modal-name" class="text-2xl font-black text-slate-800 mb-6 tracking-widest"></p>
+            <p id="modal-name" class="text-2xl font-black text-slate-800 mb-6 tracking-widest uppercase"></p>
             <img id="modal-img" src="" class="w-72 h-72 mx-auto rounded-xl">
             <p id="modal-id" class="text-xs font-mono text-slate-400 mt-6"></p>
-            <button onclick="closeQR()" class="mt-8 bg-slate-900 text-white px-12 py-4 rounded-full font-bold shadow-lg text-lg">關閉</button>
+            <button onclick="closeQR()" class="mt-8 bg-slate-900 text-white px-12 py-4 rounded-full font-bold shadow-lg text-lg text-white">關閉</button>
         </div>
     </div>
 
@@ -159,7 +160,7 @@
     <header class="premium-gradient text-white pt-10 pb-16 px-6 rounded-b-[3.5rem] shadow-2xl relative text-center">
         <div class="relative z-10">
             <h1 class="text-4xl font-bold tracking-tight italic text-white text-center">Family Trip 2026</h1>
-            <p class="text-blue-300 text-sm mt-2 font-light tracking-widest uppercase italic text-center">小貞家尊榮手冊 V42</p>
+            <p class="text-blue-300 text-sm mt-2 font-light tracking-widest uppercase italic text-center">小貞家尊榮手冊 V44</p>
             <div class="mt-8 flex justify-center">
                 <div class="bg-white/10 px-8 py-3 rounded-3xl border border-white/10 backdrop-blur-md text-sm font-bold">
                     Nova, 小貞, 祐嘉, 語恩 專屬指南
@@ -172,69 +173,103 @@
         
         <!-- Tab: 行程 (itinerary-view) -->
         <div id="itinerary-view" class="tab-content active">
-            <h2 class="text-slate-400 text-[11px] font-black uppercase tracking-[0.2em] mb-4 ml-4 text-center">Full Itinerary (2/5 - 2/12)</h2>
+            <h2 class="text-slate-400 text-[11px] font-black uppercase tracking-[0.2em] mb-4 ml-4 text-center font-black">Detailed Itinerary</h2>
             
-            <!-- Naeba Phase -->
-            <div class="accordion-item bg-white rounded-[2.5rem] mb-4 shadow-sm border border-slate-100 overflow-hidden">
+            <!-- Day 05-08 -->
+            <div class="accordion-item bg-white rounded-[2.5rem] mb-4 shadow-sm border border-slate-100 overflow-hidden font-black">
                 <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left font-bold">
                     <div class="flex items-center">
                         <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex flex-col items-center justify-center shadow-lg">
-                            <span class="text-xs opacity-80 mb-0.5">Feb</span>
-                            <span class="text-xl font-black leading-none">05-08</span>
+                            <span class="text-xs opacity-80 mb-0.5 font-black">Feb</span>
+                            <span class="text-xl font-black leading-none font-black">05-08</span>
                         </div>
-                        <div class="ml-4"><h3 class="text-slate-800 text-lg">苗場：13人團體滑雪</h3></div>
+                        <div class="ml-4"><h3 class="text-slate-800 text-lg font-black">苗場：13人團體滑雪</h3></div>
                     </div>
                     <i class="fa-solid fa-chevron-down text-slate-300 chevron"></i>
                 </button>
-                <div class="accordion-content px-6 text-base">
-                    <div class="space-y-5 border-t pt-6 text-slate-600 leading-relaxed font-bold">
+                <div class="accordion-content px-6 text-base font-black italic">
+                    <div class="space-y-5 border-t pt-6 text-slate-600 leading-relaxed">
                         <p>● <span class="font-bold text-slate-800">02.05：</span>05:30 貞儀家發車，搭乘 08:30 星宇 JX800。</p>
                         <p>● <span class="font-bold text-slate-800">住宿：</span>Naeba Wonderwall 美好境界。</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Naeba+Wonderwall+Yuzawa" target="_blank" class="map-link"><i class="fa-solid fa-location-dot mr-2"></i> 苗場民宿導航</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Naeba+Wonderwall+Yuzawa" target="_blank" class="map-link font-black"><i class="fa-solid fa-location-dot mr-2"></i> 苗場民宿導覽</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Day 10 Family Adventure -->
-            <div class="accordion-item bg-white rounded-[2.5rem] mb-4 shadow-sm border border-slate-100 overflow-hidden active">
+            <!-- Day 09 -->
+            <div class="accordion-item bg-white rounded-[2.5rem] mb-4 shadow-sm border border-slate-100 overflow-hidden font-black">
+                <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left">
+                    <div class="flex items-center">
+                        <div class="w-14 h-14 bg-slate-800 text-white rounded-2xl flex flex-col items-center justify-center shadow-lg">
+                            <span class="text-xs opacity-80 font-black">Feb</span>
+                            <span class="text-xl font-black">09</span>
+                        </div>
+                        <div class="ml-4"><h3 class="font-bold text-slate-800 text-lg font-black italic">移防東京：池袋轉乘上野</h3></div>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-300 chevron transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content px-6 text-base font-black">
+                    <div class="space-y-6 border-t pt-6 leading-relaxed">
+                        <div class="bg-blue-50/50 p-6 rounded-[2rem] border border-blue-100 shadow-sm">
+                            <ol class="space-y-4 text-slate-700">
+                                <li>1. 搭乘民宿接駁車抵達：<span class="text-blue-700 font-black">池袋站 (Ikebukuro)</span>。</li>
+                                <li>2. 轉乘 <span class="text-green-600 font-black">JR 山手線</span> 約 17 分鐘直達 <span class="text-blue-700 font-black">上野站 (Ueno)</span>。</li>
+                            </ol>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Ikebukuro+Station" target="_blank" class="map-link mt-4 font-black"><i class="fa-solid fa-train mr-2"></i> 池袋站導航</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 10 Family Adventure with Yakiniku Options -->
+            <div class="accordion-item bg-white rounded-[2.5rem] mb-4 shadow-sm border border-slate-100 overflow-hidden active font-black">
                 <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left">
                     <div class="flex items-center">
                         <div class="w-14 h-14 bg-indigo-600 text-white rounded-2xl flex flex-col items-center justify-center shadow-lg shadow-indigo-200">
-                            <span class="text-xs opacity-80">Feb</span>
+                            <span class="text-xs opacity-80 font-black">Feb</span>
                             <span class="text-xl font-black">10</span>
                         </div>
                         <div class="ml-4">
-                            <h3 class="font-bold text-slate-800 text-lg">原宿潮流：小貞家專屬</h3>
+                            <h3 class="font-bold text-slate-800 text-lg font-black">原宿潮流：小貞家專屬</h3>
                             <span class="badge-4p">四人獨立活動</span>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-down text-slate-300 chevron transition-transform duration-300"></i>
                 </button>
-                <div class="accordion-content px-6 text-base">
+                <div class="accordion-content px-6 text-base font-black">
                     <div class="space-y-6 border-t pt-6 leading-relaxed">
                         <div>
-                            <p class="font-bold text-slate-800 text-lg">10:00 teamLab Borderless (麻布台)</p>
-                            <a href="https://borderless-azabudai.ticket.teamlab.art/tickets/#/id/_vGRxJILhOFRNpcILM73-qvTLF2_pYV7pLG5HT1M295P08L5_vKjL8YP06vxGsO_?lang=zh-hant" target="_blank" class="inline-flex items-center mt-3 px-4 py-2 bg-emerald-600 text-white text-xs font-bold rounded-xl shadow-sm"><i class="fa-solid fa-qrcode mr-2"></i> 出示 teamLab 門票</a>
+                            <p class="font-bold text-slate-800 text-lg font-black">10:00 teamLab Borderless</p>
+                            <a href="https://borderless-azabudai.ticket.teamlab.art/tickets/#/id/_vGRxJILhOFRNpcILM73-qvTLF2_pYV7pLG5HT1M295P08L5_vKjL8YP06vxGsO_?lang=zh-hant" target="_blank" class="inline-flex items-center mt-3 px-4 py-2 bg-emerald-600 text-white text-xs font-bold rounded-xl shadow-sm text-white font-black"><i class="fa-solid fa-qrcode mr-2"></i> 出示 teamLab 門票</a>
                         </div>
-                        <div class="bg-orange-50/50 p-6 rounded-[2rem] border border-orange-100 shadow-sm">
-                            <p class="font-bold text-orange-900 text-lg italic">潮流區域精準導航 (僅四人)</p>
-                            <div class="mt-4 space-y-4 font-bold">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Kiddy+Land+Harajuku" target="_blank" class="block text-blue-600 underline text-lg">📍 Kiddy Land (語恩最愛玩具)</a>
-                                <a href="https://www.google.com/maps/search/?api=1&query=Takeshita+Street+Harajuku" target="_blank" class="block text-blue-600 underline text-lg">📍 原宿竹下通 (潮流點心)</a>
+                        <div class="bg-orange-50/50 p-6 rounded-[2rem] border border-orange-100 shadow-sm font-black">
+                            <p class="font-bold text-orange-900 text-lg italic">潮流區域精準導航</p>
+                            <div class="mt-4 space-y-4 font-black">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Kiddy+Land+Harajuku" target="_blank" class="block text-blue-600 underline text-lg">📍 Kiddy Land (玩具天堂)</a>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Takeshita+Street+Harajuku" target="_blank" class="block text-blue-600 underline text-lg">📍 原宿竹下通 (潮流/甜點)</a>
                                 <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+PARCO+6F" target="_blank" class="block text-blue-600 underline text-lg">📍 澀谷 PARCO 6F (任天堂)</a>
                             </div>
                         </div>
+                        
+                        <!-- Yakiniku Selection -->
                         <div>
-                            <p class="font-bold text-slate-800 underline decoration-indigo-200 decoration-2 underline-offset-8 text-lg font-black">19:30 土古里和牛燒肉 (四人專屬)</p>
+                            <p class="font-bold text-slate-800 underline decoration-indigo-200 decoration-2 underline-offset-8 text-lg font-black italic">19:30 晚餐決選：上野頂級燒肉</p>
+                            
+                            <!-- Option A: Tokori -->
                             <div class="info-card bg-slate-900 text-white border-slate-700 shadow-md">
-                                <p class="text-sm font-bold text-blue-300">📍 土古里 上野バンブーガーデン店</p>
-                                <p class="text-xs text-slate-400 mt-2 italic leading-relaxed">東京都台東区上野公園1-52 3F (山下口對面)</p>
-                                <p class="text-xs text-slate-400 mt-1 italic font-bold">TEL：+81 3-5807-2255</p>
-                                <div class="mt-4 flex gap-2">
-                                    <span class="badge-4p bg-white/10 text-white border-white/20 text-xs uppercase">預約碼: E2PT36</span>
-                                    <span class="badge-4p bg-white/10 text-white border-white/20 text-xs">小貞家 4 位</span>
-                                </div>
+                                <p class="text-sm font-bold text-blue-300 uppercase tracking-widest font-black">方案 A：土古里 (山形和牛專賣)</p>
+                                <p class="text-xs text-slate-400 mt-2 italic">適合悠雅享用頂級和牛，環境舒適。</p>
+                                <p class="text-xs text-slate-400 mt-1 italic font-black">預約碼: E2PT36 | TEL：+81 3-5807-2255</p>
                                 <a href="https://www.google.com/maps/search/?api=1&query=Tokori+Ueno+Bamboo+Garden" target="_blank" class="map-link mt-4 bg-white/10 text-white border border-white/20 font-bold text-base"><i class="fa-solid fa-location-arrow mr-2 text-blue-300"></i> 開啟土古里導航</a>
+                            </div>
+
+                            <!-- Option B: Isshin Tansuke -->
+                            <div class="info-card bg-rose-950 text-white border-rose-800 shadow-md font-black">
+                                <p class="text-sm font-bold text-rose-300 uppercase tracking-widest font-black">方案 B：燒肉 一心たん助 (牛舌天堂)</p>
+                                <p class="text-xs text-rose-200 mt-2 italic font-black">適合熱愛「厚切牛舌」的家庭，需提早搶位。</p>
+                                <p class="text-xs text-rose-200 mt-1 italic font-black font-bold">地址：東京都台東区上野4-5-9 3F</p>
+                                <p class="text-xs text-rose-200 mt-1 italic font-black font-bold">TEL：+81 3-5817-4329</p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Isshin+Tansuke+Ueno+Honten" target="_blank" class="map-link mt-4 bg-white/10 text-white border border-white/20 font-bold text-base"><i class="fa-solid fa-location-dot mr-2 text-rose-300"></i> 開啟一心たん助導航</a>
                             </div>
                         </div>
                     </div>
@@ -242,83 +277,78 @@
             </div>
 
             <!-- Day 11 Interaction -->
-            <div class="accordion-item bg-white rounded-[2.5rem] mb-4 shadow-sm border border-slate-100 overflow-hidden active">
+            <div class="accordion-item bg-white rounded-[2.5rem] mb-4 shadow-sm border border-slate-100 overflow-hidden active font-black">
                 <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left">
                     <div class="flex items-center">
                         <div class="w-14 h-14 bg-pink-500 text-white rounded-2xl flex flex-col items-center justify-center shadow-lg shadow-pink-200">
-                            <span class="text-xs opacity-80">Feb</span>
-                            <span class="text-xl font-black">11</span>
+                            <span class="text-xs opacity-80 font-black">Feb</span>
+                            <span class="text-xl font-black font-black">11</span>
                         </div>
                         <div class="ml-4">
-                            <h3 class="font-bold text-slate-800 text-lg">假日：13人集合與高空夜景</h3>
-                            <span class="badge-holiday uppercase">祝日限定動線</span>
+                            <h3 class="font-bold text-slate-800 text-lg font-black">假日：13人集合與高空夜景</h3>
+                            <span class="badge-holiday uppercase font-black">祝日限定動線</span>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-down text-slate-300 chevron"></i>
                 </button>
-                <div class="accordion-content px-6 text-base">
-                    <div class="space-y-7 border-t pt-6 leading-relaxed">
+                <div class="accordion-content px-6 text-base font-black">
+                    <div class="space-y-7 border-t pt-6 leading-relaxed font-black">
                         <!-- Lunch Options -->
                         <div>
-                            <p class="font-black text-slate-800 text-lg italic">12:00 午餐建議：換口味方案</p>
-                            <div class="info-card border-blue-100 bg-blue-50/20">
-                                <p class="text-sm font-bold text-slate-700 underline decoration-blue-300 uppercase">● 首選：五代目 花山烏龍麵 銀座店</p>
-                                <p class="text-xs text-slate-500 mt-2 italic">特色寬麵。假日排隊極長，若人多請轉戰秋葉原。</p>
-                                <a href="https://www.google.com/maps/search/?api=1&query=Godaime+Hanayama+Udon+Ginza" target="_blank" class="map-link mt-3 bg-blue-100 text-blue-800 text-base font-bold shadow-sm"><i class="fa-solid fa-bowl-food mr-2"></i> 花山地圖</a>
+                            <p class="font-black text-slate-800 text-lg italic font-black">12:00 午餐：銀座換口味方案</p>
+                            <div class="info-card border-blue-100 bg-blue-50/20 shadow-sm font-black">
+                                <p class="text-sm font-bold text-slate-700 underline decoration-blue-300 uppercase font-black">● 首選：五代目 花山烏龍麵</p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Godaime+Hanayama+Udon+Ginza" target="_blank" class="map-link mt-3 bg-blue-100 text-blue-800 text-base font-bold shadow-sm font-black"><i class="fa-solid fa-bowl-food mr-2"></i> 花山地圖</a>
                                 
-                                <div class="mt-6 pt-5 border-t border-blue-100">
-                                    <p class="text-sm font-bold text-rose-600 uppercase underline font-black">● 備案 (推薦)：炸牛排 もと村 秋葉原店</p>
-                                    <p class="text-xs text-slate-500 mt-2 italic font-bold">石盤現烤炸牛排，近下午貓頭鷹咖啡館。</p>
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Gyukatsu+Motomura+Akihabara" target="_blank" class="map-link mt-3 bg-rose-100 text-rose-800 font-bold text-base shadow-sm"><i class="fa-solid fa-fire-burner mr-2"></i> 炸牛排地圖</a>
+                                <div class="mt-6 pt-5 border-t border-blue-100 font-black">
+                                    <p class="text-sm font-bold text-rose-600 uppercase underline font-black">● 備案：炸牛排 もと村 秋葉原店</p>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Gyukatsu+Motomura+Akihabara" target="_blank" class="map-link mt-3 bg-rose-100 text-rose-800 font-bold text-base shadow-sm font-black"><i class="fa-solid fa-fire-burner mr-2"></i> 炸牛排地圖</a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="bg-amber-50/50 p-6 rounded-[2rem] border border-amber-100 shadow-sm font-bold">
-                            <p class="font-black text-amber-900 text-lg italic"><i class="fa-solid fa-feather mr-1"></i> 14:00 秋葉原貓頭鷹 (13人集合)</p>
-                            <div class="info-card bg-white border-amber-100">
-                                <p class="text-sm font-bold text-slate-700 underline decoration-amber-300">📍 秋葉原貓頭鷹咖啡館 (Akiba Fukurou)</p>
-                                <p class="text-xs text-slate-500 mt-2 font-black tracking-tight">東京都千代田区神田練塀町67 | TEL：+81 3-3254-2301</p>
-                                <a href="https://www.google.com/maps/search/?api=1&query=Akiba+Fukurou+Owl+Cafe+Tokyo" target="_blank" class="map-link mt-3 bg-amber-50 text-amber-900 font-bold text-base shadow-sm"><i class="fa-solid fa-location-arrow mr-2"></i> 貓頭鷹導航</a>
+                        <div class="bg-amber-50/50 p-6 rounded-[2rem] border border-amber-100 shadow-sm font-bold font-black">
+                            <p class="font-black text-amber-900 text-lg italic font-black"><i class="fa-solid fa-feather mr-1"></i> 14:00 秋葉原貓頭鷹 (13人集合)</p>
+                            <div class="info-card bg-white border-amber-100 font-black">
+                                <p class="text-sm font-bold text-slate-700 underline decoration-amber-300 font-black">📍 秋葉原貓頭鷹咖啡館 (Akiba Fukurou)</p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Akiba+Fukurou+Owl+Cafe+Tokyo" target="_blank" class="map-link mt-3 bg-amber-50 text-amber-900 font-bold text-base shadow-sm font-black"><i class="fa-solid fa-location-arrow mr-2"></i> 貓頭鷹導航</a>
                             </div>
                         </div>
                         
-                        <div class="bg-slate-900 text-white p-6 rounded-[2rem] shadow-xl border border-blue-500/20">
-                            <p class="font-bold text-blue-300 text-lg italic underline decoration-blue-500">15:30 家族移防 (僅四人)</p>
-                            <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-                                ⚠️ 祝日澀谷人潮擁擠。小貞家必須於 <span class="text-orange-400 font-black">15:30 準時發車</span>。
+                        <div class="bg-slate-900 text-white p-6 rounded-[2rem] shadow-xl border border-blue-500/20 font-black">
+                            <p class="font-bold text-blue-300 text-lg italic underline decoration-blue-500 font-black">15:30 家族移防 (僅四人)</p>
+                            <p class="text-sm text-slate-400 mt-2 leading-relaxed font-black">
+                                ⚠️ 祝日澀谷人潮擁擠。小貞家必須於 <span class="text-orange-400 font-black underline decoration-orange-400 font-black">15:30 準時發車</span>。
                             </p>
                         </div>
 
-                        <div class="sunset-box shadow-md border border-blue-100">
-                            <p class="font-black text-blue-900 text-xl italic tracking-tight font-black">SHIBUYA SKY (4 人專區)</p>
-                            <div class="flex gap-3 mt-2 mb-4">
-                                <span class="bg-orange-100 text-orange-700 text-xs px-3 py-1 rounded-full font-bold shadow-sm">🌅 日落 17:18</span>
-                                <span class="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm">🌌 終昏 17:44</span>
+                        <div class="sunset-box shadow-md border border-blue-100 font-black">
+                            <p class="font-black text-blue-900 text-xl italic tracking-tight font-black font-black">SHIBUYA SKY (4 人票券)</p>
+                            <div class="flex gap-3 mt-2 mb-4 font-black">
+                                <span class="bg-orange-100 text-orange-700 text-xs px-3 py-1 rounded-full font-bold shadow-sm font-black">🌅 日落 17:18</span>
+                                <span class="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm font-black">🌌 終昏 17:44</span>
                             </div>
                             
                             <div class="ticket-grid">
                                 <div class="name-card" onclick="zoomQR('00396-2026-0128-8100-1580-0017', 'Nova')"><span class="font-black text-indigo-600 text-lg">Nova</span><i class="fa-solid fa-qrcode mt-2 text-slate-300"></i></div>
                                 <div class="name-card" onclick="zoomQR('00396-2026-0128-8100-1580-0024', '小貞')"><span class="font-black text-rose-500 text-lg">小貞</span><i class="fa-solid fa-qrcode mt-2 text-slate-300"></i></div>
-                                <div class="name-card" onclick="zoomQR('00396-2026-0128-8100-1580-0031', '祐嘉')"><span class="font-black text-slate-800 text-lg font-black">祐嘉</span><i class="fa-solid fa-qrcode mt-2 text-slate-300"></i></div>
-                                <div class="name-card" onclick="zoomQR('00396-2026-0128-8100-1580-0048', '語恩')"><span class="font-black text-slate-800 text-lg font-black">語恩</span><i class="fa-solid fa-qrcode mt-2 text-slate-300"></i></div>
+                                <div class="name-card" onclick="zoomQR('00396-2026-0128-8100-1580-0031', '祐嘉')"><span class="font-black text-slate-800 text-lg font-black font-black">祐嘉</span><i class="fa-solid fa-qrcode mt-2 text-slate-300"></i></div>
+                                <div class="name-card" onclick="zoomQR('00396-2026-0128-8100-1580-0048', '語恩')"><span class="font-black text-slate-800 text-lg font-black font-black">語恩</span><i class="fa-solid fa-qrcode mt-2 text-slate-300"></i></div>
                             </div>
-                            <p class="text-xs text-slate-400 mt-5 text-center italic font-bold">● 點擊姓名顯示入場 QR Code ●</p>
-                            <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Scramble+Square+Shibuya+Sky" target="_blank" class="map-link w-full justify-center bg-blue-600 text-white mt-5 font-bold shadow-lg text-lg"><i class="fa-solid fa-camera mr-2"></i> 澀谷 SKY 地圖</a>
+                            <p class="text-xs text-slate-400 mt-5 text-center italic font-bold font-black">● 點擊姓名顯示入場 QR Code ●</p>
                         </div>
 
                         <!-- Night Dining -->
                         <div>
-                            <p class="font-bold text-slate-800 text-lg italic">19:00 澀谷晚餐：換口味建議</p>
-                            <div class="info-card border-rose-100 bg-rose-50/20">
-                                <p class="text-sm font-bold text-slate-700 underline decoration-rose-300 uppercase">● 方案 A：魚米壽司 澀谷店 (Uobei)</p>
-                                <p class="text-xs text-slate-500 mt-2 italic font-bold">全自動送餐，趣味性高，非燒肉口味。</p>
-                                <a href="https://www.google.com/maps/search/?api=1&query=Uobei+Shibuya+Dogenzaka" target="_blank" class="map-link mt-3 bg-rose-100 text-rose-800 font-bold text-base shadow-sm"><i class="fa-solid fa-fish mr-2"></i> 魚米壽司導航</a>
+                            <p class="font-bold text-slate-800 text-lg italic font-black">19:00 澀谷晚餐：換口味建議</p>
+                            <div class="info-card border-rose-100 bg-rose-50/20 shadow-sm font-black">
+                                <p class="text-sm font-bold text-slate-700 underline decoration-rose-300 uppercase font-black font-black">● 首選：魚米壽司 澀谷店</p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Uobei+Shibuya+Dogenzaka" target="_blank" class="map-link mt-3 bg-rose-100 text-rose-800 font-bold text-base shadow-sm font-black font-black"><i class="fa-solid fa-fish mr-2"></i> 魚米壽司導航</a>
                                 
-                                <div class="mt-6 pt-5 border-t border-rose-100">
-                                    <p class="text-sm font-black text-indigo-700 uppercase underline tracking-wider font-black">● 備案 (最近距離)：名代炸豬排 Katsukura</p>
-                                    <p class="text-xs text-slate-500 mt-2 leading-relaxed font-black">就在同一棟 Scramble Square 14 樓！<br>下樓即達，京都知名老店，口感極佳且非漢堡類。</p>
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Katsukura+Shibuya+Scramble+Square" target="_blank" class="map-link mt-3 bg-indigo-100 text-indigo-800 font-bold text-base shadow-sm"><i class="fa-solid fa-location-crosshairs mr-2"></i> Katsukura 導航</a>
+                                <div class="mt-6 pt-5 border-t border-rose-100 font-black">
+                                    <p class="text-sm font-black text-indigo-700 uppercase underline tracking-wider font-black font-black">● 備案：名代炸豬排 Katsukura (14F)</p>
+                                    <p class="text-xs text-slate-500 mt-2 leading-relaxed font-black font-black">登梯口下樓即達，京都知名老店，非漢堡排類。</p>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Katsukura+Shibuya+Scramble+Square" target="_blank" class="map-link mt-3 bg-indigo-100 text-indigo-800 font-bold text-base shadow-sm font-black font-black"><i class="fa-solid fa-location-crosshairs mr-2"></i> Katsukura 導航</a>
                                 </div>
                             </div>
                         </div>
@@ -326,62 +356,61 @@
                 </div>
             </div>
 
-            <!-- Day 12 Departure -->
-            <div class="accordion-item bg-white rounded-[2.5rem] mb-4 shadow-sm border border-slate-100 overflow-hidden active">
+            <!-- Day 12 -->
+            <div class="accordion-item bg-white rounded-[2.5rem] mb-4 shadow-sm border border-slate-100 overflow-hidden active font-black">
                 <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left">
                     <div class="flex items-center">
                         <div class="w-14 h-14 bg-gray-600 text-white rounded-2xl flex flex-col items-center justify-center shadow-lg">
-                            <span class="text-xs opacity-80">Feb</span>
-                            <span class="text-xl font-black">12</span>
+                            <span class="text-xs opacity-80 font-black">Feb</span>
+                            <span class="text-xl font-black font-black">12</span>
                         </div>
-                        <div class="ml-4"><h3 class="font-bold text-slate-800 text-lg italic">返程：回溫暖的家</h3></div>
+                        <div class="ml-4"><h3 class="font-bold text-slate-800 text-lg italic font-black font-black">返程：回溫暖的家</h3></div>
                     </div>
                     <i class="fa-solid fa-chevron-down text-slate-300 chevron"></i>
                 </button>
-                <div class="accordion-content px-6 text-base font-bold leading-relaxed border-t pt-6 font-black">
-                    <p class="text-slate-800 underline decoration-blue-400 decoration-4 italic text-lg">● 11:30 上野飯店發車 (團體包車) ➔ 成田機場</p>
-                    <p class="text-blue-600 mt-2 text-lg italic">● 15:35 星宇航空 JX803 起飛返台。</p>
+                <div class="accordion-content px-6 text-base font-bold leading-relaxed border-t pt-6 font-black font-black">
+                    <p class="text-slate-800 underline decoration-blue-400 decoration-4 italic text-lg font-black font-black">● 11:30 上野飯店發車 ➔ 成田機場</p>
+                    <p class="text-blue-600 mt-2 text-lg italic font-black font-black">● 15:35 星宇航空 JX803 起飛返台。</p>
                 </div>
             </div>
         </div>
 
         <!-- Tab: 清單 (checklist-view) -->
         <div id="checklist-view" class="tab-content">
-            <h2 class="text-slate-400 text-[11px] font-black uppercase tracking-[0.2em] mb-4 ml-4 text-center font-bold">Ultimate Packing Checklist</h2>
-            <div class="space-y-5 pb-12 font-bold leading-relaxed">
+            <h2 class="text-slate-400 text-[11px] font-black uppercase tracking-[0.2em] mb-4 ml-4 text-center font-bold font-black">Ultimate Packing Checklist</h2>
+            <div class="space-y-5 pb-12 font-bold leading-relaxed font-black font-black">
                 <!-- EVE CHECK -->
-                <div class="bg-indigo-50 rounded-[2.5rem] p-8 shadow-sm border border-indigo-100 shadow-md">
-                    <h3 class="font-bold text-indigo-800 text-lg mb-6 flex items-center"><i class="fa-solid fa-house-chimney mr-2"></i> 出發前一晚核心檢查</h3>
-                    <div class="grid grid-cols-1 gap-5 text-base text-indigo-900 leading-relaxed font-black">
-                        <label class="check-item flex items-center"><input type="checkbox" class="rounded border-indigo-300 mr-4"><span class="text-lg font-black">電視頻道 (確認預約/電源狀態)</span></label>
-                        <label class="check-item flex items-center"><input type="checkbox" class="rounded border-indigo-300 mr-4"><span class="text-lg font-black">餵食機 (飼料補滿/APP連線正常)</span></label>
-                        <label class="check-item flex items-center"><input type="checkbox" class="rounded border-indigo-300 mr-4"><span class="text-lg font-black">飲水機 (水量足/濾心運作檢查)</span></label>
+                <div class="bg-indigo-50 rounded-[2.5rem] p-8 shadow-sm border border-indigo-100 shadow-md font-black">
+                    <h3 class="font-bold text-indigo-800 text-lg mb-6 flex items-center italic font-black font-black"><i class="fa-solid fa-house-chimney mr-2"></i> 出發前一晚核心檢查</h3>
+                    <div class="grid grid-cols-1 gap-5 text-base text-indigo-900 font-black font-black">
+                        <label class="check-item flex items-center"><input type="checkbox" class="rounded border-indigo-300 mr-4 font-black"><span class="text-lg font-black font-black">電視頻道 (確認錄影/預約/電源)</span></label>
+                        <label class="check-item flex items-center"><input type="checkbox" class="rounded border-indigo-300 mr-4 font-black"><span class="text-lg font-black font-black">餵食機 (飼料補滿/APP連線正常)</span></label>
+                        <label class="check-item flex items-center"><input type="checkbox" class="rounded border-indigo-300 mr-4 font-black"><span class="text-lg font-black font-black">飲水機 (水量足/濾心運作檢查)</span></label>
                     </div>
                 </div>
-                <!-- Categories 1-3 -->
-                <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-slate-100">
-                    <h3 class="font-bold text-slate-800 text-lg mb-5 flex items-center"><i class="fa-solid fa-id-card text-blue-500 mr-2"></i> 1. 核心證照、行政與財務</h3>
-                    <div class="grid grid-cols-1 gap-5 text-base text-slate-600 font-black">
+                <!-- Categories -->
+                <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-slate-100 font-black">
+                    <h3 class="font-bold text-slate-800 text-lg mb-5 flex items-center font-black font-black"><i class="fa-solid fa-id-card text-blue-500 mr-2"></i> 1. 核心證照、行政與財務</h3>
+                    <div class="grid grid-cols-1 gap-5 text-base text-slate-600 font-black font-black">
                         <label class="check-item flex items-center"><input type="checkbox" class="rounded border-slate-300 mr-4"><span>護照 / 日幣現金 / 信用卡 (2張)</span></label>
                         <label class="check-item flex items-center"><input type="checkbox" class="rounded border-slate-300 mr-4"><span>eSIM QR / Visit Japan Web 截圖</span></label>
                         <label class="check-item flex items-center text-rose-600 font-black italic"><input type="checkbox" class="rounded border-rose-300 mr-4"><span>行動電源 (⚠️ 必須隨身，不可托運)</span></label>
                     </div>
                 </div>
-                <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-slate-100 font-black">
-                    <h3 class="font-bold text-slate-800 text-lg mb-5 flex items-center"><i class="fa-solid fa-person-skiing text-cyan-600 mr-2"></i> 2. 專業滑雪裝備 (一項不缺)</h3>
+                <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-slate-100 font-black font-black">
+                    <h3 class="font-bold text-slate-800 text-lg mb-5 flex items-center font-black font-black"><i class="fa-solid fa-person-skiing text-cyan-600 mr-2"></i> 2. 專業滑雪裝備 (一項不缺)</h3>
                     <div class="grid grid-cols-1 gap-5 text-base text-slate-800 font-black">
-                        <label class="check-item flex items-center"><input type="checkbox" class="rounded border-slate-300 mr-4"><span>雪衣褲、雪靴、專業雪襪、手套</span></label>
-                        <label class="check-item flex items-center"><input type="checkbox" class="rounded border-slate-300 mr-4"><span>吸濕發熱衣 / 中層保暖衣 / 面罩</span></label>
-                        <label class="check-item flex items-center italic text-slate-500"><input type="checkbox" class="rounded border-slate-300 mr-4"><span>滑雪護具 / 雪票夾 (Lift Pass)</span></label>
+                        <label class="check-item flex items-center"><input type="checkbox" class="rounded border-slate-300 mr-4 font-black font-black"><span>雪衣褲、雪靴、專業雪襪、手套</span></label>
+                        <label class="check-item flex items-center"><input type="checkbox" class="rounded border-slate-300 mr-4 font-black font-black"><span>吸濕發熱衣 / 中層保暖衣 / 面罩</span></label>
+                        <label class="check-item flex items-center italic text-slate-500 font-black"><input type="checkbox" class="rounded border-slate-300 mr-4 font-black font-black"><span>滑雪護具 / 雪票夾 (Lift Pass)</span></label>
                     </div>
                 </div>
-                <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-slate-100">
-                    <h3 class="font-bold text-slate-800 text-lg mb-5 flex items-center"><i class="fa-solid fa-suitcase-medical text-rose-500 mr-2"></i> 3. 醫療、護理與個人電器</h3>
-                    <div class="grid grid-cols-1 gap-5 text-base text-slate-600 leading-relaxed font-black">
+                <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-slate-100 font-black font-black font-black">
+                    <h3 class="font-bold text-slate-800 text-lg mb-5 flex items-center font-black font-black font-black"><i class="fa-solid fa-suitcase-medical text-rose-500 mr-2"></i> 3. 醫療、護理與個人電器</h3>
+                    <div class="grid grid-cols-1 gap-5 text-base text-slate-600 leading-relaxed font-black font-black">
                         <label class="check-item flex items-center font-black text-rose-600"><input type="checkbox" class="rounded border-rose-300 mr-4"><span>個人常備藥 / OK繃 / 暖暖包</span></label>
                         <label class="check-item flex items-center font-black text-blue-600"><input type="checkbox" class="rounded border-blue-300 mr-4"><span>吹風機 (Hair Dryer - 自備型)</span></label>
-                        <label class="check-item flex items-center"><input type="checkbox" class="rounded border-slate-300 mr-4"><span>多孔快充頭 / 傳輸線 / 太陽眼鏡</span></label>
-                        <label class="check-item flex items-center italic text-slate-500 font-black"><input type="checkbox" class="rounded border-slate-300 mr-4"><span>高保濕乳液 / 防曬乳 / 壓縮收納袋</span></label>
+                        <label class="check-item flex items-center italic text-slate-500 font-black"><input type="checkbox" class="rounded border-slate-300 mr-4 font-black font-black"><span>多孔快充頭 / 傳輸線 / 太陽眼鏡 / 壓縮袋</span></label>
                     </div>
                 </div>
             </div>
@@ -389,22 +418,22 @@
 
         <!-- Tab: 住宿 (transport-view) -->
         <div id="transport-view" class="tab-content">
-            <h2 class="text-slate-400 text-[11px] font-black uppercase tracking-[0.2em] mb-4 ml-4 text-center font-bold">Accommodation & VJW Info</h2>
+            <h2 class="text-slate-400 text-[11px] font-black uppercase tracking-[0.2em] mb-4 ml-4 text-center font-bold font-black">Accommodation & VJW Info</h2>
             <div class="space-y-6">
                 <div class="immigration-card shadow-2xl">
-                    <h3 class="text-blue-400 font-bold mb-6 flex items-center text-xl underline underline-offset-8 decoration-2 italic font-black font-serif"><i class="fa-solid fa-hotel mr-4 text-white"></i> 住宿 1：苗場</h3>
-                    <div class="space-y-6 text-sm text-slate-200 font-black">
-                        <div><p class="opacity-50 text-xs uppercase tracking-widest font-mono">Hotel Name</p><p class="font-bold text-lg italic text-white font-serif tracking-tight">Naeba Wonderwall (美好境界)</p></div>
-                        <div><p class="opacity-50 text-xs uppercase tracking-widest font-mono">Address (JP/EN)</p><p class="font-bold text-white leading-relaxed text-base">新潟県南魚沼郡湯沢町三国171-7</p><p class="opacity-80 mt-2 font-light italic leading-6 text-sm">171-7 Mikuni, Yuzawa, Minamiuonuma, Niigata</p></div>
-                        <div><p class="opacity-50 text-xs uppercase tracking-widest font-mono">Phone Number</p><p class="font-black text-blue-300 text-lg mt-1">+81 25-780-6111</p></div>
+                    <h3 class="text-blue-400 font-bold mb-6 flex items-center text-xl underline underline-offset-8 decoration-2 italic font-black font-serif font-black"><i class="fa-solid fa-hotel mr-4 text-white font-black"></i> 住宿 1：苗場</h3>
+                    <div class="space-y-6 text-sm text-slate-200 font-black font-black font-black">
+                        <div><p class="opacity-50 text-xs uppercase tracking-widest font-mono font-black">Hotel Name</p><p class="font-bold text-lg italic text-white font-serif tracking-tight">Naeba Wonderwall (美好境界)</p></div>
+                        <div><p class="opacity-50 text-xs uppercase tracking-widest font-mono font-black">Address</p><p class="font-bold text-white leading-relaxed text-base">新潟県南魚沼郡湯沢町三国171-7</p><p class="opacity-80 mt-2 font-light italic leading-6 text-sm font-black font-black">171-7 Mikuni, Yuzawa, Minamiuonuma, Niigata</p></div>
+                        <div><p class="opacity-50 text-xs uppercase tracking-widest font-mono font-black">Phone Number</p><p class="font-black text-blue-300 text-lg mt-1 underline decoration-blue-500 font-black">+81 25-780-6111</p></div>
                     </div>
                 </div>
-                <div class="immigration-card shadow-2xl border-t-4 border-blue-500 font-bold">
-                    <h3 class="text-blue-400 font-bold mb-6 flex items-center text-xl underline underline-offset-8 decoration-2 italic font-black font-serif"><i class="fa-solid fa-city mr-4 text-white"></i> 住宿 2：東京</h3>
-                    <div class="space-y-6 text-sm text-slate-200 leading-relaxed font-bold font-black">
-                        <div><p class="opacity-50 text-xs uppercase tracking-widest font-mono">Hotel Name</p><p class="font-bold text-lg italic text-white font-serif tracking-tight">APA Hotel Keisei Ueno Ekimae (京成上野)</p></div>
-                        <div><p class="opacity-50 text-xs uppercase tracking-widest font-mono">Address (JP/EN)</p><p class="font-bold text-white text-base leading-relaxed">東京都台東区上野2-14-26</p><p class="opacity-80 mt-2 font-light italic text-sm">2-14-26 Ueno, Taito City, Tokyo</p></div>
-                        <div><p class="opacity-50 text-xs uppercase tracking-widest font-mono">Phone Number</p><p class="font-black text-blue-300 text-lg mt-1">TEL：+81 3-5846-6811</p></div>
+                <div class="immigration-card shadow-2xl border-t-4 border-blue-500 font-bold font-black">
+                    <h3 class="text-blue-400 font-bold mb-6 flex items-center text-xl underline underline-offset-8 decoration-2 italic font-black font-serif font-black"><i class="fa-solid fa-city mr-4 text-white font-black"></i> 住宿 2：東京</h3>
+                    <div class="space-y-6 text-sm text-slate-200 leading-relaxed font-bold font-black font-black">
+                        <div><p class="opacity-50 text-xs uppercase tracking-widest font-mono font-black">Hotel Name</p><p class="font-bold text-lg italic text-white font-serif tracking-tight">APA Hotel Keisei Ueno Ekimae (京成上野)</p></div>
+                        <div><p class="opacity-50 text-xs uppercase tracking-widest font-mono font-black">Address</p><p class="font-bold text-white text-base leading-relaxed font-black">東京都台東区上野2-14-26</p><p class="opacity-80 mt-2 font-light italic text-sm font-black font-black">2-14-26 Ueno, Taito City, Tokyo</p></div>
+                        <div><p class="opacity-50 text-xs uppercase tracking-widest font-mono font-black">Phone Number</p><p class="font-black text-blue-300 text-lg mt-1 underline decoration-blue-500 font-black">TEL：+81 3-5846-6811</p></div>
                     </div>
                 </div>
             </div>
@@ -412,22 +441,22 @@
 
         <!-- Tab: 分組 (groups-view) -->
         <div id="groups-view" class="tab-content">
-            <h2 class="text-slate-400 text-[11px] font-black uppercase tracking-[0.2em] mb-4 ml-4 text-center font-bold">Family & Teams</h2>
-            <div class="space-y-6 font-bold">
+            <h2 class="text-slate-400 text-[11px] font-black uppercase tracking-[0.2em] mb-4 ml-4 text-center font-bold font-black">Family & Teams</h2>
+            <div class="space-y-6 font-bold font-black font-black">
                 <div class="bg-white rounded-[3rem] p-10 shadow-sm border border-slate-100 text-center font-black">
-                    <h3 class="font-bold text-slate-800 text-xl mb-8 flex items-center justify-center italic underline decoration-blue-400 decoration-4 underline-offset-8 font-black"><i class="fa-solid fa-house-user text-blue-500 mr-4 text-2xl"></i> 小貞家成員</h3>
-                    <div class="space-y-4 text-lg font-black italic">
-                        <div class="p-6 bg-blue-50 rounded-3xl flex justify-between items-center"><span>Nova & 小貞</span><span class="badge-4p uppercase text-sm font-black">Parents</span></div>
-                        <div class="p-6 bg-indigo-50 rounded-3xl flex justify-between items-center"><span>祐嘉 (高二)</span><span class="badge-4p uppercase text-sm font-black">Youth</span></div>
-                        <div class="p-6 bg-orange-50 rounded-3xl flex justify-between items-center"><span>語恩 (小六)</span><span class="badge-4p uppercase text-sm font-black">Kids</span></div>
+                    <h3 class="font-bold text-slate-800 text-xl mb-8 flex items-center justify-center italic underline decoration-blue-400 decoration-4 underline-offset-8 font-black font-black font-black"><i class="fa-solid fa-house-user text-blue-500 mr-4 text-2xl"></i> 小貞家四人名單</h3>
+                    <div class="space-y-4 text-lg font-black italic font-black">
+                        <div class="p-6 bg-blue-50 rounded-3xl flex justify-between items-center font-black font-black"><span>Nova & 小貞</span><span class="badge-4p uppercase text-sm font-black font-black">Parents</span></div>
+                        <div class="p-6 bg-indigo-50 rounded-3xl flex justify-between items-center font-black font-black"><span>祐嘉 (高二)</span><span class="badge-4p uppercase text-sm font-black font-black">Youth</span></div>
+                        <div class="p-6 bg-orange-50 rounded-3xl flex justify-between items-center font-black font-black"><span>語恩 (小六)</span><span class="badge-4p uppercase text-sm font-black font-black">Kids</span></div>
                     </div>
                 </div>
-                <div class="bg-slate-100 rounded-[3rem] p-10 shadow-inner border border-slate-200">
-                    <h3 class="font-bold text-slate-500 text-sm mb-6 flex items-center font-black"><i class="fa-solid fa-users text-slate-400 mr-4 text-lg"></i> 大團體原始編組參考</h3>
+                <div class="bg-slate-100 rounded-[3rem] p-10 shadow-inner border border-slate-200 font-black">
+                    <h3 class="font-bold text-slate-500 text-sm mb-6 flex items-center font-black font-black"><i class="fa-solid fa-users text-slate-400 mr-4 text-lg font-black font-black"></i> 大團體原始編組參考</h3>
                     <div class="space-y-5 text-sm text-slate-600 leading-relaxed font-black">
-                        <div><p class="text-amber-600 uppercase mb-2 underline underline-offset-4 tracking-widest text-base font-black">Junior 組 (滑雪組)</p><p>恩丞、語恩、暐苹、詠捷</p></div>
-                        <div class="border-t border-slate-200 pt-5 font-black"><p class="text-rose-600 uppercase mb-2 underline underline-offset-4 tracking-widest text-base font-black">Lady 組 (滑雪組)</p><p>Sa媽、小咪、小貞、詠涵、菲菲</p></div>
-                        <div class="border-t border-slate-200 pt-5 font-black"><p class="text-blue-600 uppercase mb-2 underline underline-offset-4 tracking-widest text-base font-black">Men 組 (滑雪組)</p><p>黎老闆、小梅、Nova、祐嘉</p></div>
+                        <div><p class="text-amber-600 uppercase mb-2 underline underline-offset-4 tracking-widest text-base font-black">Junior 組 (滑雪組)</p><p class="font-black">恩丞、語恩、暐苹、詠捷</p></div>
+                        <div class="border-t border-slate-200 pt-5 font-black"><p class="text-rose-600 uppercase mb-2 underline underline-offset-4 tracking-widest text-base font-black">Lady 組 (滑雪組)</p><p class="font-black font-black">Sa媽、小咪、小貞、詠涵、菲菲</p></div>
+                        <div class="border-t border-slate-200 pt-5 font-black"><p class="text-blue-600 uppercase mb-2 underline underline-offset-4 tracking-widest text-base font-black">Men 組 (滑雪組)</p><p class="font-black font-black">黎老闆、小梅、Nova、祐嘉</p></div>
                     </div>
                 </div>
             </div>
@@ -438,19 +467,19 @@
     <nav class="fixed bottom-0 left-0 right-0 h-28 sticky-nav flex justify-around items-center px-8 z-50">
         <button onclick="changeView('itinerary')" class="nav-btn active flex flex-col items-center group" id="nav-itinerary">
             <div class="icon-bg w-14 h-14 flex items-center justify-center rounded-2xl transition-all mb-1 shadow-sm"><i class="fa-solid fa-calendar-day text-2xl"></i></div>
-            <span class="text-[11px] font-black uppercase tracking-tighter font-black">行程</span>
+            <span class="text-[11px] font-black uppercase tracking-tighter font-black font-black">行程</span>
         </button>
         <button onclick="changeView('checklist')" class="nav-btn text-slate-300 flex flex-col items-center group" id="nav-checklist">
             <div class="icon-bg w-14 h-14 flex items-center justify-center rounded-2xl transition-all mb-1 shadow-sm"><i class="fa-solid fa-clipboard-check text-2xl"></i></div>
-            <span class="text-[11px] font-black uppercase tracking-tighter font-black">清單</span>
+            <span class="text-[11px] font-black uppercase tracking-tighter font-black font-black">清單</span>
         </button>
         <button onclick="changeView('groups')" class="nav-btn text-slate-300 flex flex-col items-center group" id="nav-groups">
             <div class="icon-bg w-14 h-14 flex items-center justify-center rounded-2xl transition-all mb-1 shadow-sm"><i class="fa-solid fa-users text-2xl"></i></div>
-            <span class="text-[11px] font-black uppercase tracking-tighter font-black">成員</span>
+            <span class="text-[11px] font-black uppercase tracking-tighter font-black font-black">成員</span>
         </button>
         <button onclick="changeView('transport')" class="nav-btn text-slate-300 flex flex-col items-center group" id="nav-transport">
             <div class="icon-bg w-14 h-14 flex items-center justify-center rounded-2xl transition-all mb-1 shadow-sm"><i class="fa-solid fa-hotel text-2xl"></i></div>
-            <span class="text-[11px] font-black uppercase tracking-tighter font-black">住宿</span>
+            <span class="text-[11px] font-black uppercase tracking-tighter font-black font-black">住宿</span>
         </button>
     </nav>
 
