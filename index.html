@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>2026 小貞家·東京滑雪手冊 V72</title>
+    <title>2026 小貞家·東京滑雪手冊 V74</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -47,7 +47,7 @@
             transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .accordion-item.active .accordion-content {
-            max-height: 5000px; /* Ensure enough height for long content */
+            max-height: 5000px;
             padding-bottom: 1.5rem;
         }
         .accordion-item.active .chevron { transform: rotate(180deg); }
@@ -118,6 +118,17 @@
 
         .font-black { font-weight: 900 !important; }
         .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        
+        .time-box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 10px 14px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body class="premium-bg pb-44 font-black selection:bg-sky-500/30">
@@ -140,8 +151,7 @@
             <div>
                 <h1 class="text-3xl font-black italic tracking-tighter text-white text-shadow">小貞家 · 2026</h1>
                 <div class="flex items-center gap-2 mt-2">
-                    <span class="px-2 py-0.5 bg-sky-500/20 border border-sky-500/30 text-sky-400 text-[10px] rounded font-black tracking-widest">V72 單一展開版</span>
-                    <!-- GitHub Link Placeholder -->
+                    <span class="px-2 py-0.5 bg-sky-500/20 border border-sky-500/30 text-sky-400 text-[10px] rounded font-black tracking-widest">V74 票券修復版</span>
                     <a href="https://github.com/" target="_blank" class="px-2 py-0.5 bg-slate-800/50 border border-slate-600/50 text-slate-300 text-[10px] rounded font-black tracking-widest flex items-center gap-1 hover:bg-slate-700 transition-colors">
                         <i class="fab fa-github"></i> 專屬連結
                     </a>
@@ -237,10 +247,24 @@
                 </button>
                 <div class="accordion-content px-5">
                     <div class="space-y-4 pt-2">
-                        <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
-                            <p class="text-xs text-slate-400 uppercase tracking-wider mb-2">Morning</p>
-                            <p class="text-white text-sm">租借裝備、教練課程集合、初滑體驗。</p>
+                        <!-- Morning Schedule -->
+                        <div>
+                            <div class="time-box">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-coffee text-amber-400"></i>
+                                    <span class="text-sm font-black text-slate-200">美好境界早餐</span>
+                                </div>
+                                <span class="text-sm text-amber-400 font-black">06:30 - 08:30</span>
+                            </div>
+                            <div class="time-box border-emerald-500/30 bg-emerald-500/10">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-skiing text-emerald-400"></i>
+                                    <span class="text-sm font-black text-white">滑雪課程</span>
+                                </div>
+                                <span class="text-sm text-emerald-400 font-black">08:30 - 12:30</span>
+                            </div>
                         </div>
+
                         <div class="bg-emerald-500/10 p-4 rounded-2xl border border-emerald-500/20 shadow-lg shadow-emerald-500/10">
                             <div class="flex items-center gap-2 mb-2">
                                 <i class="fas fa-star text-yellow-400"></i>
@@ -269,6 +293,24 @@
                 </button>
                 <div class="accordion-content px-5">
                     <div class="space-y-4 pt-2">
+                        <!-- Morning Schedule -->
+                        <div>
+                            <div class="time-box">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-coffee text-amber-400"></i>
+                                    <span class="text-sm font-black text-slate-200">美好境界早餐</span>
+                                </div>
+                                <span class="text-sm text-amber-400 font-black">06:30 - 08:30</span>
+                            </div>
+                            <div class="time-box border-emerald-500/30 bg-emerald-500/10">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-skiing text-emerald-400"></i>
+                                    <span class="text-sm font-black text-white">滑雪課程</span>
+                                </div>
+                                <span class="text-sm text-emerald-400 font-black">08:30 - 12:30</span>
+                            </div>
+                        </div>
+
                         <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
                             <p class="text-xs text-slate-400 uppercase tracking-wider mb-2">Activity</p>
                             <p class="text-white text-sm">挑戰 Dragondola (龍之纜車) 前往田代/神樂區域。</p>
@@ -298,6 +340,24 @@
                 </button>
                 <div class="accordion-content px-5">
                     <div class="space-y-4 pt-2">
+                        <!-- Morning Schedule -->
+                        <div>
+                            <div class="time-box">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-coffee text-amber-400"></i>
+                                    <span class="text-sm font-black text-slate-200">美好境界早餐</span>
+                                </div>
+                                <span class="text-sm text-amber-400 font-black">06:30 - 08:30</span>
+                            </div>
+                            <div class="time-box border-emerald-500/30 bg-emerald-500/10">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-skiing text-emerald-400"></i>
+                                    <span class="text-sm font-black text-white">滑雪課程</span>
+                                </div>
+                                <span class="text-sm text-emerald-400 font-black">08:30 - 12:30</span>
+                            </div>
+                        </div>
+
                         <div class="bg-emerald-500/10 p-4 rounded-2xl border border-emerald-500/20">
                             <p class="text-xs text-emerald-400 uppercase tracking-wider mb-2 font-black">Dinner Recommendation</p>
                             <h4 class="text-lg text-white mb-1">たば (Taba)</h4>
@@ -635,7 +695,9 @@
         }
 
         function closeQR() {
-            document.getElementById('qr-modal').classList.add('hidden');
+            const modal = document.getElementById('qr-modal');
+            modal.classList.add('hidden');
+            modal.style.display = 'none';
         }
     </script>
 </body>
