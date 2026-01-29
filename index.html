@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>2026 小貞家·東京滑雪手冊 V74</title>
+    <title>2026 小貞家·東京滑雪手冊 V76</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -129,6 +129,16 @@
             align-items: center;
             margin-bottom: 8px;
         }
+        
+        /* Loading Animation for Weather */
+        .loading-pulse {
+            animation: pulse-opacity 1.5s infinite;
+        }
+        @keyframes pulse-opacity {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
     </style>
 </head>
 <body class="premium-bg pb-44 font-black selection:bg-sky-500/30">
@@ -151,7 +161,7 @@
             <div>
                 <h1 class="text-3xl font-black italic tracking-tighter text-white text-shadow">小貞家 · 2026</h1>
                 <div class="flex items-center gap-2 mt-2">
-                    <span class="px-2 py-0.5 bg-sky-500/20 border border-sky-500/30 text-sky-400 text-[10px] rounded font-black tracking-widest">V74 票券修復版</span>
+                    <span class="px-2 py-0.5 bg-sky-500/20 border border-sky-500/30 text-sky-400 text-[10px] rounded font-black tracking-widest">V76 官方校正版</span>
                     <a href="https://github.com/" target="_blank" class="px-2 py-0.5 bg-slate-800/50 border border-slate-600/50 text-slate-300 text-[10px] rounded font-black tracking-widest flex items-center gap-1 hover:bg-slate-700 transition-colors">
                         <i class="fab fa-github"></i> 專屬連結
                     </a>
@@ -166,20 +176,33 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-3 gap-3">
+        <div class="grid grid-cols-3 gap-3 mb-4">
+            <!-- Updated Snow Depth based on official site -->
             <div class="glass-card p-4 text-center border-sky-500/20 bg-sky-500/5">
-                <p class="text-[9px] text-sky-400/70 font-black uppercase mb-1 tracking-wider">SNOW</p>
-                <p class="text-2xl font-black text-white">245<span class="text-xs ml-1 text-slate-400">cm</span></p>
+                <p class="text-[9px] text-sky-400/70 font-black uppercase mb-1 tracking-wider">SNOW TOP</p>
+                <p class="text-2xl font-black text-white">220<span class="text-xs ml-1 text-slate-400">cm</span></p>
             </div>
-            <div class="glass-card p-4 text-center border-blue-500/20 bg-blue-500/5">
-                <p class="text-[9px] text-blue-400/70 font-black uppercase mb-1 tracking-wider">TEMP</p>
-                <p class="text-2xl font-black text-white">-6<span class="text-xs ml-1 text-slate-400">°C</span></p>
+            <!-- Live Temperature -->
+            <div class="glass-card p-4 text-center border-blue-500/20 bg-blue-500/5 relative">
+                <p class="text-[9px] text-blue-400/70 font-black uppercase mb-1 tracking-wider">LIVE TEMP</p>
+                <p class="text-2xl font-black text-white flex justify-center items-end">
+                    <span id="temp-display" class="loading-pulse">--</span><span class="text-xs ml-1 text-slate-400">°C</span>
+                </p>
+                <div class="absolute top-2 right-2 w-1.5 h-1.5 bg-green-500 rounded-full animate-ping"></div>
             </div>
+            <!-- Live Countdown -->
             <div class="glass-card p-4 text-center border-rose-500/20 bg-rose-500/5">
-                <p class="text-[9px] text-rose-400/70 font-black uppercase mb-1 tracking-wider">DAYS</p>
-                <p class="text-2xl font-black text-white">14<span class="text-xs ml-1 text-slate-400">D</span></p>
+                <p class="text-[9px] text-rose-400/70 font-black uppercase mb-1 tracking-wider">COUNTDOWN</p>
+                <p class="text-2xl font-black text-white"><span id="days-display">--</span><span class="text-xs ml-1 text-slate-400">D</span></p>
             </div>
         </div>
+
+        <!-- Official Link Button -->
+        <a href="https://www.princehotels.co.jp/ski/naeba/winter/coursemap/?utm_source=chatgpt.com" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-white/5 border border-white/10 text-xs font-black text-slate-300 hover:bg-white/10 transition-all">
+            <i class="fas fa-snowflake text-sky-400"></i>
+            查看官方最新雪況 (Prince Hotels)
+            <i class="fas fa-external-link-alt text-[10px] opacity-50"></i>
+        </a>
     </header>
 
     <main class="px-5">
@@ -699,6 +722,44 @@
             modal.classList.add('hidden');
             modal.style.display = 'none';
         }
+
+        // --- Live Weather & Countdown Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Live Weather from Open-Meteo (Naeba Coordinates: Lat 36.79, Lon 138.78 approx)
+            const lat = 36.7934;
+            const lon = 138.7825;
+            const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m&timezone=Asia%2FTokyo`;
+
+            fetch(weatherUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.current && data.current.temperature_2m !== undefined) {
+                        const tempElement = document.getElementById('temp-display');
+                        tempElement.innerText = Math.round(data.current.temperature_2m);
+                        tempElement.classList.remove('loading-pulse'); // Stop animation
+                    }
+                })
+                .catch(err => {
+                    console.error("Weather fetch failed:", err);
+                    document.getElementById('temp-display').innerText = "-6"; // Fallback
+                });
+
+            // 2. Countdown Logic (Target: 2026-02-05)
+            const targetDate = new Date('2026-02-05T00:00:00');
+            const today = new Date();
+            const timeDiff = targetDate - today;
+            const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+            
+            // Handle if trip already started or passed
+            if (daysLeft > 0) {
+                document.getElementById('days-display').innerText = daysLeft;
+            } else if (daysLeft > -8) { // During the trip (8 days)
+                document.getElementById('days-display').innerText = "Trip!";
+                document.getElementById('days-display').classList.add("text-emerald-400");
+            } else {
+                document.getElementById('days-display').innerText = "End";
+            }
+        });
     </script>
 </body>
 </html>
